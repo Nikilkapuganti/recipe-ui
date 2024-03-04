@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btnprimary {
+
+  @apply bg-primary rounded font-bold text-sm px-4 py-3.5 text-white leading-3 cursor-pointer
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+select {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.65166 4.18411C1.39599 4.28576 1.20193 4.46133 1.07564 4.69852C0.980151 4.88334 0.97399 5.35463 1.06332 5.54561C1.14957 5.72734 8.24662 12.8275 8.44068 12.926C8.56081 12.9876 8.62857 13 8.875 13C9.12143 13 9.18919 12.9876 9.30932 12.926C9.50338 12.8275 16.6004 5.72734 16.6867 5.54561C16.776 5.35463 16.7698 4.88334 16.6744 4.69852C16.5789 4.5137 16.3879 4.32272 16.2123 4.23339L16.0675 4.15946L8.9058 4.1533C3.46597 4.15022 1.72251 4.15638 1.65166 4.18411Z' fill='%234D4D4D'/%3E%3C/svg%3E");
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-size: 12px 12px;
+  background-position: right 15px center;
+  /* Change the px value here to change the distance */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.inputboxstyling {
+
+  @apply block w-full px-3.5 py-2 text-base font-light text-gray bg-white rounded-sm border-solid border border-secondary
+}
+
+.inputboxstyling:active {
+
+  /* @apply text-lightgrey bg-white border border-secondary */
+  color: #4d4d4d;
+  background-color: #fff;
+  border-color: #152a43
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+  color: black;
+  position: relative;
+  text-align: left;
+  text-overflow: ellipsis;
+  text-size-adjust: 100%;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+  color: black;
+  position: relative;
+  text-align: left;
+  text-overflow: ellipsis;
+  text-size-adjust: 100%;
+}
+
+
+.filterButton {
+  @apply bg-secondary rounded font-bold text-sm px-4 py-3.5 text-black leading-3
+}
+
+.filterButton:focus,
+.filterButton:active {
+  outline: none !important;
+  border: 1px solid rgb(227, 233, 243);
+}
+
+.sort {
+  position: relative;
+}
+
+.sort::before,
+.sort::after {
+  position: absolute;
+  top: 50%;
+  left: 110px;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.3;
+  text-rendering: auto;
+}
+
+
+.sort::before {
+  margin-top: -5px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7' /%3E%3C/svg%3E");
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.sort::after {
+  margin-top: 5px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E");
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.page {
+  margin-bottom: 150px;
+}
+
+.is-invalid {
+  @apply border-solid border border-error !important
+  /* border-color: red; */
+}
+
+.errorMsg {
+  color: red
 }
