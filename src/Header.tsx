@@ -40,14 +40,14 @@ const Header: React.FC = () => {
         type="text"
         placeholder="Search for dishes by name, state"
         value={searchTerm}
-        className='inputboxstyling w-3/6 mt-2.5'
+        className='inputboxstyling w-3/6 mt-2.5 relative z-10' // Add relative and z-10
         onChange={handleSearch}
       />
       {searchTerm && suggestions.length > 0 && (
-        <div className="dropdown">
-          <ul className="suggestions">
+        <div className="dropdown absolute bg-white mt-60 border border-gray-300 rounded-md shadow-lg z-20">
+          <ul className="suggestions p-2">
             {suggestions.map((suggestion: any) => (
-              <li key={suggestion._id.$oid} >
+              <li key={suggestion._id.$oid}>
                 {suggestion.name}
               </li>
             ))}
@@ -56,6 +56,8 @@ const Header: React.FC = () => {
       )}
     </div>
   );
+  
+  
 };
 
 export default Header;
